@@ -9,9 +9,8 @@ body {
 
 .container {
   width: 100%;
-  max-width: 600px;
   background-color: #fff;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -273,4 +272,18 @@ button[type="submit"]:hover {
   border-top: 1px solid #eee;
   font-size: 0.9rem;
   color: #888;
+}
+
+@media (min-width: 640px) {
+  /* Estilos que só se aplicam em telas maiores que 640px (tablets e desktops) */
+
+  .container {
+    max-width: 600px; /* Devolvemos o max-width para telas grandes */
+    padding: 2rem;      /* Devolvemos o padding maior */
+  }
+
+  .metas-grid {
+    /* Em telas grandes, voltamos a ter 2 colunas */
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

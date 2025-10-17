@@ -5,7 +5,6 @@ import { calcularResultadoTACF, calcularMetasTACF } from './logic/calculadora';
 function App() {
   const [activeTab, setActiveTab] = useState('metas');
 
-  // --- Estados da Calculadora de Resultado ---
   const [idade, setIdade] = useState('');
   const [estatura, setEstatura] = useState('');
   const [sexo, setSexo] = useState('masculino');
@@ -18,7 +17,6 @@ function App() {
   const [segundosMarcha, setSegundosMarcha] = useState('');
   const [resultado, setResultado] = useState(null);
 
-  // --- Estados para a Calculadora de Metas ---
   const [sexoMeta, setSexoMeta] = useState('masculino');
   const [idadeMeta, setIdadeMeta] = useState('');
   const [estaturaMeta, setEstaturaMeta] = useState('');
@@ -85,60 +83,32 @@ function App() {
               <div className="resultado-container">
                 <h3>Suas Metas:</h3>
                 <div className="metas-grid">
-                  {/* Card 1: Cintura */}
                   <div className="meta-card">
                     <h4>Circunferência da Cintura</h4>
                     <div className="meta-targets">
-                      <div className="meta-target meta-target-apto">
-                        <span className="meta-label">✅ Mínimo Apto</span>
-                        <span className="meta-value">{resultadoMetas.cintura.minApto}</span>
-                      </div>
-                      <div className="meta-target meta-target-excelente">
-                        <span className="meta-label">⭐ Máximo Excelente</span>
-                        <span className="meta-value">{resultadoMetas.cintura.maxExcelente}</span>
-                      </div>
+                      <div className="meta-target meta-target-apto"><span className="meta-label">✅ Mínimo Apto</span><span className="meta-value">{resultadoMetas.cintura.minApto}</span></div>
+                      <div className="meta-target meta-target-excelente"><span className="meta-label">⭐ Máximo Excelente</span><span className="meta-value">{resultadoMetas.cintura.maxExcelente}</span></div>
                     </div>
                   </div>
-                  {/* Card 2: Flexão de Braços */}
                   <div className="meta-card">
                     <h4>Flexão de Braços</h4>
                     <div className="meta-targets">
-                      <div className="meta-target meta-target-apto">
-                        <span className="meta-label">✅ Mínimo Apto</span>
-                        <span className="meta-value">{resultadoMetas.flexaoBraco.minApto}</span>
-                      </div>
-                      <div className="meta-target meta-target-excelente">
-                        <span className="meta-label">⭐ Máximo Excelente</span>
-                        <span className="meta-value">{resultadoMetas.flexaoBraco.maxExcelente}</span>
-                      </div>
+                      <div className="meta-target meta-target-apto"><span className="meta-label">✅ Mínimo Apto</span><span className="meta-value">{resultadoMetas.flexaoBraco.minApto}</span></div>
+                      <div className="meta-target meta-target-excelente"><span className="meta-label">⭐ Máximo Excelente</span><span className="meta-value">{resultadoMetas.flexaoBraco.maxExcelente}</span></div>
                     </div>
                   </div>
-                  {/* Card 3: Flexão de Tronco */}
                   <div className="meta-card">
                     <h4>Flexão de Tronco</h4>
                     <div className="meta-targets">
-                      <div className="meta-target meta-target-apto">
-                        <span className="meta-label">✅ Mínimo Apto</span>
-                        <span className="meta-value">{resultadoMetas.flexaoTronco.minApto}</span>
-                      </div>
-                      <div className="meta-target meta-target-excelente">
-                        <span className="meta-label">⭐ Máximo Excelente</span>
-                        <span className="meta-value">{resultadoMetas.flexaoTronco.maxExcelente}</span>
-                      </div>
+                      <div className="meta-target meta-target-apto"><span className="meta-label">✅ Mínimo Apto</span><span className="meta-value">{resultadoMetas.flexaoTronco.minApto}</span></div>
+                      <div className="meta-target meta-target-excelente"><span className="meta-label">⭐ Máximo Excelente</span><span className="meta-value">{resultadoMetas.flexaoTronco.maxExcelente}</span></div>
                     </div>
                   </div>
-                  {/* Card 4: Corrida */}
                   <div className="meta-card">
                     <h4>Corrida de 12 min</h4>
                     <div className="meta-targets">
-                      <div className="meta-target meta-target-apto">
-                        <span className="meta-label">✅ Mínimo Apto</span>
-                        <span className="meta-value">{resultadoMetas.corrida.minApto}</span>
-                      </div>
-                      <div className="meta-target meta-target-excelente">
-                        <span className="meta-label">⭐ Máximo Excelente</span>
-                        <span className="meta-value">{resultadoMetas.corrida.maxExcelente}</span>
-                      </div>
+                      <div className="meta-target meta-target-apto"><span className="meta-label">✅ Mínimo Apto</span><span className="meta-value">{resultadoMetas.corrida.minApto}</span></div>
+                      <div className="meta-target meta-target-excelente"><span className="meta-label">⭐ Máximo Excelente</span><span className="meta-value">{resultadoMetas.corrida.maxExcelente}</span></div>
                     </div>
                   </div>
                 </div>
@@ -146,7 +116,6 @@ function App() {
             )}
           </div>
         ) : (
-          // --- CONTEÚDO DA ABA DE RESULTADO ---
           <div>
             <form onSubmit={handleCalcular} className="form-tacf">
 			<fieldset>
@@ -165,27 +134,44 @@ function App() {
               </fieldset>
               <button type="submit">Calcular Resultado</button>
             </form>
+            
             {resultado && (
-              <div className="resultado-container">
-                <h2>Resultado Final</h2>
-                <div className={`resultado-apreciacao ${resultado.apreciacao === 'APTO' ? 'apto' : 'nao-apto'}`}>{resultado.apreciacao}</div>
-                <p><strong>Conceituação Global:</strong> {resultado.conceituacao}</p><p><strong>Grau Final:</strong> {resultado.grauFinal} pontos</p>
-                <details open><summary>Ver Detalhes da Pontuação</summary>
-                  <ul>
-                    <li>Circunferência da Cintura: {resultado.pontos.cintura} pontos</li><li>Flexão de Braços: {resultado.pontos.flexaoBraco} pontos</li>
-                    <li>Flexão de Tronco: {resultado.pontos.flexaoTronco} pontos</li><li>Teste Aeróbico: {resultado.pontos.aerobico} pontos</li>
-                  </ul>
-                </details>
+              <div className="resultado-dashboard">
+                <div className={`resultado-card-main ${resultado.apreciacao === 'APTO' ? 'apto' : 'nao-apto'}`}>
+                  <div className="apreciacao">{resultado.apreciacao}</div>
+                  <div className="conceituacao-global"><strong>Conceituação Global:</strong> {resultado.conceituacao}</div>
+                  <div className="grau-final">{resultado.grauFinal} pontos</div>
+                </div>
+
+                <h4 style={{textAlign: 'center', marginTop: '2rem'}}>Pontuação por Teste:</h4>
+                <div className="pontos-grid">
+                  <div className="ponto-card">
+                    <div className="ponto-label">Circunferência da Cintura</div>
+                    <div className="ponto-value">{resultado.pontos.cintura}</div>
+                  </div>
+                  <div className="ponto-card">
+                    <div className="ponto-label">Flexão de Braços</div>
+                    <div className="ponto-value">{resultado.pontos.flexaoBraco}</div>
+                  </div>
+                  <div className="ponto-card">
+                    <div className="ponto-label">Flexão de Tronco</div>
+                    <div className="ponto-value">{resultado.pontos.flexaoTronco}</div>
+                  </div>
+                  <div className="ponto-card">
+                    <div className="ponto-label">Teste Aeróbico</div>
+                    <div className="ponto-value">{resultado.pontos.aerobico}</div>
+                  </div>
+                </div>
               </div>
             )}
           </div>
         )}
       </div>
-      {/* ===== INÍCIO DA ALTERAÇÃO ===== */}
+
       <footer className="app-footer">
         <p>VERSÃO BETA - 2025</p>
       </footer>
-      {/* ===== FIM DA ALTERAÇÃO ===== */}
+
     </div>
   );
 }

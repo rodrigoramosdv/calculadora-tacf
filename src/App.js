@@ -50,6 +50,7 @@ function App() {
       <header>
         <h1>Calculadora TACF</h1>
         <p>Baseada na NSCA 54-3 de 2024</p>
+        <p className="author-credit">Desenvolvido por Rodrigo Ramos</p>
       </header>
 
       <div className="tab-container">
@@ -180,6 +181,11 @@ function App() {
           </div>
         )}
       </div>
+      {/* ===== INÍCIO DA ALTERAÇÃO ===== */}
+      <footer className="app-footer">
+        <p>VERSÃO BETA - 2025</p>
+      </footer>
+      {/* ===== FIM DA ALTERAÇÃO ===== */}
     </div>
   );
 }

@@ -1,0 +1,259 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  color: #0056b3;
+}
+
+.form-tacf fieldset {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-tacf legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  color: #0056b3;
+}
+
+.form-group, .form-group-radio, .form-group-inline {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label, .form-group-radio label, .form-group-inline label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input, .form-group select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group-radio div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-group-radio input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.form-group-inline {
+  flex-direction: row;
+  align-items: center;
+}
+.form-group-inline input {
+    width: 100px;
+    text-align: center;
+}
+.form-group-inline span {
+    margin: 0 0.5rem;
+    font-weight: bold;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.resultado-container {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #0056b3;
+  border-radius: 1px;
+  background-color: #f9f9f9;
+}
+
+.resultado-container h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.resultado-apreciacao {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.resultado-apreciacao.apto {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.resultado-apreciacao.nao-apto {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+/* Adicionar ao final do App.css */
+
+.metas-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.metas-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.metas-list li:last-child {
+  border-bottom: none;
+}
+
+.metas-list li strong {
+  margin-bottom: 0.5rem;
+  color: #0056b3;
+}
+
+.metas-list li span {
+  padding: 0.25rem 0;
+}
+
+
+.tab-container {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.tab-button {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  font-weight: bold;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.tab-button.active {
+  color: #0056b3;
+  border-bottom: 3px solid #007bff;
+}
+
+.tab-button:hover {
+  background-color: #f0f2f5;
+}
+
+.metas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.meta-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.meta-card h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #0056b3;
+  font-size: 1.2rem;
+}
+
+.meta-targets {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.meta-target {
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.meta-target-apto {
+  background-color: #e7f3ff;
+  border: 1px solid #b3d7ff;
+}
+
+.meta-target-excelente {
+  background-color: #fff8e1;
+  border: 1px solid #ffecb3;
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.meta-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.meta-target-excelente .meta-value {
+  color: #c58900;
+}
